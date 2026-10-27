@@ -1,0 +1,209 @@
+{
+  "dataset": {
+    "rows_raw": 32581,
+    "columns": 12,
+    "columns_list": [
+      "person_age",
+      "person_income",
+      "person_home_ownership",
+      "person_emp_length",
+      "loan_intent",
+      "loan_grade",
+      "loan_amnt",
+      "loan_int_rate",
+      "loan_status",
+      "loan_percent_income",
+      "cb_person_default_on_file",
+      "cb_person_cred_hist_length"
+    ],
+    "missing_values": {
+      "person_emp_length": 895,
+      "loan_int_rate": 3116
+    },
+    "duplicate_rows": 165,
+    "target_counts": {
+      "non_default_0": 25327,
+      "default_1": 7089
+    },
+    "default_rate": 0.21868830207305034
+  },
+  "cleaning": {
+    "rows": 32581,
+    "duplicate_rows": 165,
+    "impossible_age": 5,
+    "impossible_employment_length": 2,
+    "employment_longer_than_life": 2,
+    "missing_person_emp_length": 895,
+    "missing_loan_int_rate": 3116,
+    "rows_after_cleaning": 32416,
+    "duplicates_removed": 165,
+    "rows_removed_total": 165
+  },
+  "numeric_summary": {
+    "person_age": {
+      "mean": 27.730369319058344,
+      "median": 26.0,
+      "skew": 1.9423593420303076,
+      "min": 20.0,
+      "max": 94.0
+    },
+    "person_income": {
+      "mean": 66091.64082551826,
+      "median": 55000.0,
+      "skew": 32.958748288150126,
+      "min": 4000.0,
+      "max": 6000000.0
+    },
+    "person_emp_length": {
+      "mean": 4.783011387065056,
+      "median": 4.0,
+      "skew": 1.249525932182503,
+      "min": 0.0,
+      "max": 41.0
+    },
+    "loan_amnt": {
+      "mean": 9593.845631786771,
+      "median": 8000.0,
+      "skew": 1.1919443851202343,
+      "min": 500.0,
+      "max": 35000.0
+    },
+    "loan_int_rate": {
+      "mean": 11.017265100098905,
+      "median": 10.99,
+      "skew": 0.20700165410053853,
+      "min": 5.42,
+      "max": 23.22
+    },
+    "loan_percent_income": {
+      "mean": 0.1702498766041461,
+      "median": 0.15,
+      "skew": 1.0638113566804188,
+      "min": 0.0,
+      "max": 0.83
+    },
+    "cb_person_cred_hist_length": {
+      "mean": 5.811296890424482,
+      "median": 4.0,
+      "skew": 1.6593687613558763,
+      "min": 2.0,
+      "max": 30.0
+    }
+  },
+  "spearman_correlation_with_target": {
+    "loan_int_rate": 0.3208841941289963,
+    "loan_percent_income": 0.3165434427495205,
+    "person_income": -0.27220459680258213,
+    "person_emp_length": -0.09795734959706154,
+    "loan_amnt": 0.08446248159884459,
+    "person_age": -0.034561951788059576,
+    "cb_person_cred_hist_length": -0.024953055344027284
+  },
+  "categorical_default_rates": {
+    "loan_grade": {
+      "A": {
+        "default_rate": 0.09959824348313558,
+        "count": 10703
+      },
+      "B": {
+        "default_rate": 0.16318475016847983,
+        "count": 10387
+      },
+      "C": {
+        "default_rate": 0.20751786269027647,
+        "count": 6438
+      },
+      "D": {
+        "default_rate": 0.5906077348066299,
+        "count": 3620
+      },
+      "E": {
+        "default_rate": 0.6448598130841121,
+        "count": 963
+      },
+      "F": {
+        "default_rate": 0.7053941908713693,
+        "count": 241
+      },
+      "G": {
+        "default_rate": 0.984375,
+        "count": 64
+      }
+    },
+    "person_home_ownership": {
+      "MORTGAGE": {
+        "default_rate": 0.1261874485750617,
+        "count": 13369
+      },
+      "OTHER": {
+        "default_rate": 0.3113207547169811,
+        "count": 106
+      },
+      "OWN": {
+        "default_rate": 0.07491221225126804,
+        "count": 2563
+      },
+      "RENT": {
+        "default_rate": 0.3160947612651117,
+        "count": 16378
+      }
+    },
+    "loan_intent": {
+      "DEBTCONSOLIDATION": {
+        "default_rate": 0.28676045480824824,
+        "count": 5189
+      },
+      "EDUCATION": {
+        "default_rate": 0.17251598814537514,
+        "count": 6411
+      },
+      "HOMEIMPROVEMENT": {
+        "default_rate": 0.2615470228158041,
+        "count": 3594
+      },
+      "MEDICAL": {
+        "default_rate": 0.2676266137040715,
+        "count": 6042
+      },
+      "PERSONAL": {
+        "default_rate": 0.1989814477991997,
+        "count": 5498
+      },
+      "VENTURE": {
+        "default_rate": 0.14853924674410418,
+        "count": 5682
+      }
+    },
+    "cb_person_default_on_file": {
+      "N": {
+        "default_rate": 0.18432886157535786,
+        "count": 26686
+      },
+      "Y": {
+        "default_rate": 0.3787085514834206,
+        "count": 5730
+      }
+    }
+  },
+  "missingness_vs_target": {
+    "person_emp_length": {
+      "default_rate_when_present": 0.21591017223332382,
+      "default_rate_when_missing": 0.3172103487064117
+    },
+    "loan_int_rate": {
+      "default_rate_when_present": 0.2199106442481498,
+      "default_rate_when_missing": 0.20710823909531503
+    }
+  },
+  "redundancy": {
+    "pearson_correlation": 0.9989392486852575,
+    "max_absolute_difference": 0.09338235294117647,
+    "share_within_001": 0.9880614511352419
+  },
+  "split": {
+    "train_rows": 25932,
+    "test_rows": 6484,
+    "train_default_rate": 0.2186873361098257,
+    "test_default_rate": 0.21869216533004318
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "project": "loan-default-prediction",
+  "trained_at": "2026-10-26T17:44:33+00:00",
+  "selected_model": "random_forest",
+  "display_name": "Random Forest",
+  "estimator_class": "RandomForestClassifier",
+  "selection_rule": "highest mean 5-fold CV ROC-AUC on the training split; mean CV F1 as tie-breaker",
+  "hyperparameters": {
+    "min_samples_leaf": 1,
+    "max_features": 0.5,
+    "max_depth": 20,
+    "class_weight": "balanced"
+  },
+  "decision_threshold": 0.62,
+  "threshold_selection": {
+    "threshold": 0.62,
+    "f1": 0.8285772110908723,
+    "precision": 0.972215625742104,
+    "recall": 0.7219185328866161,
+    "criterion": "max F1 on out-of-fold training predictions"
+  },
+  "target": {
+    "name": "loan_status",
+    "positive_label": 1,
+    "negative_label": 0,
+    "positive_meaning": "default",
+    "negative_meaning": "no default"
+  },
+  "features": [
+    "person_age",
+    "person_income",
+    "person_emp_length",
+    "loan_amnt",
+    "loan_int_rate",
+    "loan_percent_income",
+    "cb_person_cred_hist_length",
+    "loan_grade",
+    "person_home_ownership",
+    "loan_intent",
+    "cb_person_default_on_file"
+  ],
+  "encoded_features": [
+    "num_base__person_age",
+    "num_base__person_emp_length",
+    "num_base__loan_int_rate",
+    "num_base__loan_percent_income",
+    "num_base__cb_person_cred_hist_length",
+    "num_base__missingindicator_person_age",
+    "num_base__missingindicator_person_emp_length",
+    "num_base__missingindicator_loan_int_rate",
+    "num_log__person_income",
+    "num_log__loan_amnt",
+    "grade__loan_grade",
+    "cat__person_home_ownership_MORTGAGE",
+    "cat__person_home_ownership_OTHER",
+    "cat__person_home_ownership_OWN",
+    "cat__person_home_ownership_RENT",
+    "cat__loan_intent_DEBTCONSOLIDATION",
+    "cat__loan_intent_EDUCATION",
+    "cat__loan_intent_HOMEIMPROVEMENT",
+    "cat__loan_intent_MEDICAL",
+    "cat__loan_intent_PERSONAL",
+    "cat__loan_intent_VENTURE",
+    "cat__cb_person_default_on_file_N",
+    "cat__cb_person_default_on_file_Y"
+  ],
+  "cv_roc_auc": 0.9362497933661069,
+  "test_metrics": {
+    "threshold": 0.62,
+    "accuracy": 0.9358420727945712,
+    "precision": 0.9753320683111955,
+    "recall": 0.7249647390691114,
+    "f1": 0.8317152103559871,
+    "roc_auc": 0.9370281257778146,
+    "pr_auc": 0.891919702648949,
+    "confusion_matrix": {
+      "true_negative": 5040,
+      "false_positive": 26,
+      "false_negative": 390,
+      "true_positive": 1028
+    },
+    "support": {
+      "non_default": 5066,
+      "default": 1418
+    }
+  },
+  "test_metrics_at_0_5": {
+    "threshold": 0.5,
+    "accuracy": 0.9313695249845774,
+    "precision": 0.9263803680981595,
+    "recall": 0.7454160789844851,
+    "f1": 0.8261039468542399,
+    "roc_auc": 0.9370281257778146,
+    "pr_auc": 0.891919702648949,
+    "confusion_matrix": {
+      "true_negative": 4982,
+      "false_positive": 84,
+      "false_negative": 361,
+      "true_positive": 1057
+    },
+    "support": {
+      "non_default": 5066,
+      "default": 1418
+    }
+  },
+  "top_features": [
+    {
+      "feature": "num_base__loan_percent_income",
+      "value": 0.21873725672418928,
+      "kind": "mean_decrease_in_impurity"
+    },
+    {
+      "feature": "num_log__person_income",
+      "value": 0.1683125520839799,
+      "kind": "mean_decrease_in_impurity"
+    },
+    {
+      "feature": "grade__loan_grade",
+      "value": 0.15724587682859395,
+      "kind": "mean_decrease_in_impurity"
+    },
+    {
+      "feature": "num_base__loan_int_rate",
+      "value": 0.10595167329302821,
+      "kind": "mean_decrease_in_impurity"
+    },
+    {
+      "feature": "num_log__loan_amnt",
+      "value": 0.058971392460834895,
+      "kind": "mean_decrease_in_impurity"
+    },
+    {
+      "feature": "num_base__person_emp_length",
+      "value": 0.04678735463623394,
+      "kind": "mean_decrease_in_impurity"
+    },
+    {
+      "feature": "num_base__person_age",
+      "value": 0.041742748807643976,
+      "kind": "mean_decrease_in_impurity"
+    },
+    {
+      "feature": "cat__person_home_ownership_RENT",
+      "value": 0.04024085735760808,
+      "kind": "mean_decrease_in_impurity"
+    },
+    {
+      "feature": "num_base__cb_person_cred_hist_length",
+      "value": 0.02952492634628138,
+      "kind": "mean_decrease_in_impurity"
+    },
+    {
+      "feature": "cat__person_home_ownership_MORTGAGE",
+      "value": 0.018233488694082273,
+      "kind": "mean_decrease_in_impurity"
+    },
+    {
+      "feature": "cat__person_home_ownership_OWN",
+      "value": 0.01798344050713272,
+      "kind": "mean_decrease_in_impurity"
+    },
+    {
+      "feature": "cat__loan_intent_MEDICAL",
+      "value": 0.015973802519499567,
+      "kind": "mean_decrease_in_impurity"
+    },
+    {
+      "feature": "cat__loan_intent_HOMEIMPROVEMENT",
+      "value": 0.015761752586901052,
+      "kind": "mean_decrease_in_impurity"
+    },
+    {
+      "feature": "cat__loan_intent_DEBTCONSOLIDATION",
+      "value": 0.013696850102057342,
+      "kind": "mean_decrease_in_impurity"
+    },
+    {
+      "feature": "cat__loan_intent_VENTURE",
+      "value": 0.012680558248756135,
+      "kind": "mean_decrease_in_impurity"
+    }
+  ],
+  "dataset": {
+    "path": "data/credit_risk_dataset.csv",
+    "sha256": "ce3c6d2167717bf1627d1c0c81cbccd28323cd4aa7b96d542599366d5ff6aac8",
+    "raw_rows": 32581,
+    "clean_rows": 32416,
+    "train_rows": 25932,
+    "test_rows": 6484,
+    "train_default_rate": 0.2186873361098257,
+    "test_default_rate": 0.21869216533004318
+  },
+  "library_versions": {
+    "python": "3.13.5",
+    "pandas": "3.1.0",
+    "numpy": "2.5.4",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0"
+  },
+  "artifact": {
+    "path": "models/loan_default_pipeline.joblib",
+    "size_mb": 10.75
+  }
+}

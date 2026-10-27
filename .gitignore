@@ -1,0 +1,57 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python bytecode, caches, and test/build artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage/
+.tox/
+.nox/
+.hypothesis/
+*.egg-info/
+build/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Secrets and local environment files
+.env
+.env.*
+!.env.example
+!**/.env.example
+*.pem
+*.key
+.streamlit/secrets.toml
+frontend/.env.local
+
+# Logs, temporary files, and local editor settings
+*.log
+*.tmp
+.DS_Store
+.vscode/
+.idea/
+.playwright-mcp/
+playwright-report/
+test-results/
+
+# Downloaded archives (the extracted CSV is committed)
+data/*.zip
+
+# Model experiment leftovers (the final artifact is committed)
+models/*_experiment.joblib
+
+# Frontend dependencies and build output
+frontend/node_modules/
+frontend/dist/
+frontend/coverage/

@@ -1,0 +1,382 @@
+{
+  "project": "loan-default-prediction",
+  "trained_at": "2026-10-26T17:44:33+00:00",
+  "selected_model": "random_forest",
+  "display_name": "Random Forest",
+  "estimator_class": "RandomForestClassifier",
+  "selection_rule": "highest mean 5-fold CV ROC-AUC on the training split; mean CV F1 as tie-breaker",
+  "hyperparameters": {
+    "min_samples_leaf": 1,
+    "max_features": 0.5,
+    "max_depth": 20,
+    "class_weight": "balanced"
+  },
+  "decision_threshold": 0.62,
+  "threshold_selection": {
+    "threshold": 0.62,
+    "f1": 0.8285772110908723,
+    "precision": 0.972215625742104,
+    "recall": 0.7219185328866161,
+    "criterion": "max F1 on out-of-fold training predictions"
+  },
+  "target": {
+    "name": "loan_status",
+    "positive_label": 1,
+    "negative_label": 0,
+    "positive_meaning": "default",
+    "negative_meaning": "no default"
+  },
+  "features": [
+    "person_age",
+    "person_income",
+    "person_emp_length",
+    "loan_amnt",
+    "loan_int_rate",
+    "loan_percent_income",
+    "cb_person_cred_hist_length",
+    "loan_grade",
+    "person_home_ownership",
+    "loan_intent",
+    "cb_person_default_on_file"
+  ],
+  "encoded_features": [
+    "num_base__person_age",
+    "num_base__person_emp_length",
+    "num_base__loan_int_rate",
+    "num_base__loan_percent_income",
+    "num_base__cb_person_cred_hist_length",
+    "num_base__missingindicator_person_age",
+    "num_base__missingindicator_person_emp_length",
+    "num_base__missingindicator_loan_int_rate",
+    "num_log__person_income",
+    "num_log__loan_amnt",
+    "grade__loan_grade",
+    "cat__person_home_ownership_MORTGAGE",
+    "cat__person_home_ownership_OTHER",
+    "cat__person_home_ownership_OWN",
+    "cat__person_home_ownership_RENT",
+    "cat__loan_intent_DEBTCONSOLIDATION",
+    "cat__loan_intent_EDUCATION",
+    "cat__loan_intent_HOMEIMPROVEMENT",
+    "cat__loan_intent_MEDICAL",
+    "cat__loan_intent_PERSONAL",
+    "cat__loan_intent_VENTURE",
+    "cat__cb_person_default_on_file_N",
+    "cat__cb_person_default_on_file_Y"
+  ],
+  "cv_roc_auc": 0.9362497933661069,
+  "test_metrics": {
+    "threshold": 0.62,
+    "accuracy": 0.9358420727945712,
+    "precision": 0.9753320683111955,
+    "recall": 0.7249647390691114,
+    "f1": 0.8317152103559871,
+    "roc_auc": 0.9370281257778146,
+    "pr_auc": 0.891919702648949,
+    "confusion_matrix": {
+      "true_negative": 5040,
+      "false_positive": 26,
+      "false_negative": 390,
+      "true_positive": 1028
+    },
+    "support": {
+      "non_default": 5066,
+      "default": 1418
+    }
+  },
+  "test_metrics_at_0_5": {
+    "threshold": 0.5,
+    "accuracy": 0.9313695249845774,
+    "precision": 0.9263803680981595,
+    "recall": 0.7454160789844851,
+    "f1": 0.8261039468542399,
+    "roc_auc": 0.9370281257778146,
+    "pr_auc": 0.891919702648949,
+    "confusion_matrix": {
+      "true_negative": 4982,
+      "false_positive": 84,
+      "false_negative": 361,
+      "true_positive": 1057
+    },
+    "support": {
+      "non_default": 5066,
+      "default": 1418
+    }
+  },
+  "top_features": [
+    {
+      "feature": "num_base__loan_percent_income",
+      "value": 0.21873725672418928,
+      "kind": "mean_decrease_in_impurity"
+    },
+    {
+      "feature": "num_log__person_income",
+      "value": 0.1683125520839799,
+      "kind": "mean_decrease_in_impurity"
+    },
+    {
+      "feature": "grade__loan_grade",
+      "value": 0.15724587682859395,
+      "kind": "mean_decrease_in_impurity"
+    },
+    {
+      "feature": "num_base__loan_int_rate",
+      "value": 0.10595167329302821,
+      "kind": "mean_decrease_in_impurity"
+    },
+    {
+      "feature": "num_log__loan_amnt",
+      "value": 0.058971392460834895,
+      "kind": "mean_decrease_in_impurity"
+    },
+    {
+      "feature": "num_base__person_emp_length",
+      "value": 0.04678735463623394,
+      "kind": "mean_decrease_in_impurity"
+    },
+    {
+      "feature": "num_base__person_age",
+      "value": 0.041742748807643976,
+      "kind": "mean_decrease_in_impurity"
+    },
+    {
+      "feature": "cat__person_home_ownership_RENT",
+      "value": 0.04024085735760808,
+      "kind": "mean_decrease_in_impurity"
+    },
+    {
+      "feature": "num_base__cb_person_cred_hist_length",
+      "value": 0.02952492634628138,
+      "kind": "mean_decrease_in_impurity"
+    },
+    {
+      "feature": "cat__person_home_ownership_MORTGAGE",
+      "value": 0.018233488694082273,
+      "kind": "mean_decrease_in_impurity"
+    },
+    {
+      "feature": "cat__person_home_ownership_OWN",
+      "value": 0.01798344050713272,
+      "kind": "mean_decrease_in_impurity"
+    },
+    {
+      "feature": "cat__loan_intent_MEDICAL",
+      "value": 0.015973802519499567,
+      "kind": "mean_decrease_in_impurity"
+    },
+    {
+      "feature": "cat__loan_intent_HOMEIMPROVEMENT",
+      "value": 0.015761752586901052,
+      "kind": "mean_decrease_in_impurity"
+    },
+    {
+      "feature": "cat__loan_intent_DEBTCONSOLIDATION",
+      "value": 0.013696850102057342,
+      "kind": "mean_decrease_in_impurity"
+    },
+    {
+      "feature": "cat__loan_intent_VENTURE",
+      "value": 0.012680558248756135,
+      "kind": "mean_decrease_in_impurity"
+    }
+  ],
+  "dataset": {
+    "path": "data/credit_risk_dataset.csv",
+    "sha256": "ce3c6d2167717bf1627d1c0c81cbccd28323cd4aa7b96d542599366d5ff6aac8",
+    "raw_rows": 32581,
+    "clean_rows": 32416,
+    "train_rows": 25932,
+    "test_rows": 6484,
+    "train_default_rate": 0.2186873361098257,
+    "test_default_rate": 0.21869216533004318
+  },
+  "library_versions": {
+    "python": "3.13.5",
+    "pandas": "3.1.0",
+    "numpy": "2.5.4",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0"
+  },
+  "artifact": {
+    "path": "models/loan_default_pipeline.joblib",
+    "size_mb": 10.75
+  },
+  "baseline_cv": [
+    {
+      "variant": "logistic_regression",
+      "family": "logistic_regression",
+      "class_weight": "none",
+      "fit_seconds": 1.69,
+      "roc_auc_mean": 0.872421959928273,
+      "roc_auc_std": 0.004435950055328705,
+      "pr_auc_mean": 0.716088003183582,
+      "pr_auc_std": 0.004471552515091122,
+      "precision_mean": 0.7492733895303694,
+      "precision_std": 0.0047939734058407455,
+      "recall_mean": 0.5247783760265404,
+      "recall_std": 0.015372635660470807,
+      "f1_mean": 0.6171150491003139,
+      "f1_std": 0.010659924536854461,
+      "accuracy_mean": 0.8576663558091289,
+      "accuracy_std": 0.002464650467988073
+    },
+    {
+      "variant": "logistic_regression_balanced",
+      "family": "logistic_regression",
+      "class_weight": "balanced",
+      "fit_seconds": 1.31,
+      "roc_auc_mean": 0.8730287740262088,
+      "roc_auc_std": 0.004442783411755141,
+      "pr_auc_mean": 0.7105993533875836,
+      "pr_auc_std": 0.004546168186475083,
+      "precision_mean": 0.519359296639437,
+      "precision_std": 0.004064828310194051,
+      "recall_mean": 0.7887519909252656,
+      "recall_std": 0.008593201410566692,
+      "f1_mean": 0.6262919672174319,
+      "f1_std": 0.0041926218712306255,
+      "accuracy_mean": 0.794153945188106,
+      "accuracy_std": 0.0026475362490731404
+    },
+    {
+      "variant": "decision_tree",
+      "family": "decision_tree",
+      "class_weight": "none",
+      "fit_seconds": 1.11,
+      "roc_auc_mean": 0.848086617525138,
+      "roc_auc_std": 0.003065292718964806,
+      "pr_auc_mean": 0.6192121460352101,
+      "pr_auc_std": 0.006586379384226124,
+      "precision_mean": 0.7363243065987206,
+      "precision_std": 0.007700526317757376,
+      "recall_mean": 0.7737608092674172,
+      "recall_std": 0.006089175602028881,
+      "f1_mean": 0.7545447827824634,
+      "f1_std": 0.004849100209225075,
+      "accuracy_mean": 0.8899042899306767,
+      "accuracy_std": 0.002499595729985817
+    },
+    {
+      "variant": "decision_tree_balanced",
+      "family": "decision_tree",
+      "class_weight": "balanced",
+      "fit_seconds": 0.35,
+      "roc_auc_mean": 0.8470723937270291,
+      "roc_auc_std": 0.0034519069323166647,
+      "pr_auc_mean": 0.626146953042382,
+      "pr_auc_std": 0.005865354638121718,
+      "precision_mean": 0.751328368313289,
+      "precision_std": 0.010681330237707983,
+      "recall_mean": 0.7651189893480642,
+      "recall_std": 0.010010763223891807,
+      "f1_mean": 0.7580419061415952,
+      "f1_std": 0.004042697713142604,
+      "accuracy_mean": 0.8931820265309213,
+      "accuracy_std": 0.002339236948933475
+    },
+    {
+      "variant": "random_forest",
+      "family": "random_forest",
+      "class_weight": "none",
+      "fit_seconds": 3.63,
+      "roc_auc_mean": 0.9299387704281893,
+      "roc_auc_std": 0.0023038734583646307,
+      "pr_auc_mean": 0.8821391074937461,
+      "pr_auc_std": 0.0021829512831866137,
+      "precision_mean": 0.9722010970073821,
+      "precision_std": 0.003331822685779203,
+      "recall_mean": 0.7145107179762099,
+      "recall_std": 0.006017411978630138,
+      "f1_mean": 0.8236463555941501,
+      "f1_std": 0.0032290771427753644,
+      "accuracy_mean": 0.9330942384588841,
+      "accuracy_std": 0.0009371288665772176
+    },
+    {
+      "variant": "random_forest_balanced",
+      "family": "random_forest",
+      "class_weight": "balanced",
+      "fit_seconds": 4.09,
+      "roc_auc_mean": 0.9308390233238164,
+      "roc_auc_std": 0.0015198175464578515,
+      "pr_auc_mean": 0.8817118703715623,
+      "pr_auc_std": 0.0016450898443190719,
+      "precision_mean": 0.9097072109813586,
+      "precision_std": 0.005294272210415861,
+      "recall_mean": 0.7402560815482988,
+      "recall_std": 0.005975491005679735,
+      "f1_mean": 0.8162453762286903,
+      "f1_std": 0.002369922361905122,
+      "accuracy_mean": 0.9271170301677538,
+      "accuracy_std": 0.0007259654844316687
+    }
+  ],
+  "tuned_cv": [
+    {
+      "variant": "logistic_regression",
+      "family": "logistic_regression",
+      "class_weight": "balanced",
+      "params": {
+        "model__C": 10,
+        "model__class_weight": "balanced"
+      },
+      "roc_auc_mean": 0.8730337776070993,
+      "roc_auc_std": 0.004441934830147746,
+      "pr_auc_mean": 0.7106034282730933,
+      "pr_auc_std": 0.004516214098694155,
+      "precision_mean": 0.5194187400042877,
+      "precision_std": 0.003831424371528684,
+      "recall_mean": 0.7887519909252656,
+      "recall_std": 0.008772322201944361,
+      "f1_mean": 0.626333901797939,
+      "f1_std": 0.003991285313805396,
+      "accuracy_mean": 0.7941925031214008,
+      "accuracy_std": 0.002491685882839613
+    },
+    {
+      "variant": "decision_tree",
+      "family": "decision_tree",
+      "class_weight": "balanced",
+      "params": {
+        "model__class_weight": "balanced",
+        "model__max_depth": 12,
+        "model__min_samples_leaf": 20
+      },
+      "roc_auc_mean": 0.9167753970712434,
+      "roc_auc_std": 0.0031807742398190088,
+      "pr_auc_mean": 0.865205489532628,
+      "pr_auc_std": 0.0015947596907735252,
+      "precision_mean": 0.7456597075959677,
+      "precision_std": 0.01884626035634109,
+      "recall_mean": 0.7779925257751984,
+      "recall_std": 0.007533641877799971,
+      "f1_mean": 0.7612540667956675,
+      "f1_std": 0.0061414289672157745,
+      "accuracy_mean": 0.8932208223843598,
+      "accuracy_std": 0.004545260042656558
+    },
+    {
+      "variant": "random_forest",
+      "family": "random_forest",
+      "class_weight": "balanced",
+      "params": {
+        "model__min_samples_leaf": 1,
+        "model__max_features": 0.5,
+        "model__max_depth": 20,
+        "model__class_weight": "balanced"
+      },
+      "roc_auc_mean": 0.9362497933661069,
+      "roc_auc_std": 0.0012912300186770712,
+      "pr_auc_mean": 0.8910911035697818,
+      "pr_auc_std": 0.0014976039157613295,
+      "precision_mean": 0.9241837898266109,
+      "precision_std": 0.005497912297745892,
+      "recall_mean": 0.7473092013767492,
+      "recall_std": 0.006556513573549045,
+      "f1_mean": 0.8263503463859994,
+      "f1_std": 0.0029405950348774714,
+      "accuracy_mean": 0.9313202909971539,
+      "accuracy_std": 0.0009460093636070288
+    }
+  ]
+}
